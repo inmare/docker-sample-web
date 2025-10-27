@@ -14,8 +14,8 @@ RUN npm run build
 
 # nginx컨테이너 생성
 FROM nginx:alpine
-# nginx폴더로 dist의 파일 옮기기
-COPY --from=builder /app/dist /usr/share/nginx/html
+# nginx폴더로 dist의 파일만 옮기기
+COPY --from=builder /app/dist/ /usr/share/nginx/html
 
 # 기본 nginx config 변경
 RUN rm /etc/nginx/conf.d/default.conf
