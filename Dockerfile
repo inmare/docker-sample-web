@@ -14,4 +14,4 @@ RUN npm run build
 
 FROM nginx:alpine
 # nginx폴더로 파일 옮기기
-COPY --from=builder /app/build /user/share/nginx/html
+COPY --from=builder /app/build /usr/share/nginx/html
