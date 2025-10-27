@@ -1,4 +1,4 @@
-FROM node:18-alphine as builder
+FROM node:18-alpine as builder
 
 # 컨테이너 안에서 작업실로 사용할 폴더
 WORKDIR /app
