@@ -12,6 +12,7 @@ COPY . .
 
 RUN npm run build
 
+# nginx컨테이너 생성
 FROM nginx:alpine
-# nginx폴더로 파일 옮기기
-COPY --from=builder /app/build /usr/share/nginx/html
+# nginx폴더로 dist의 파일 옮기기
+COPY --from=builder /app/dist /usr/share/nginx/html
